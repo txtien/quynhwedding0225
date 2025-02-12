@@ -427,7 +427,6 @@
 
                     <h3 class="form-title">Gửi lời chúc</h3>
                     <form action="" id="messageForm" method="POST">
-                        <input type='hidden' id="postId" value='199' />
                         <div class="input-group">
                             <label for="">
                                 Tên của bạn </label>
@@ -489,15 +488,14 @@
             //FORM
             $('#messageForm').submit(function (e) {
                 e.preventDefault();
-                const postId = $(this).find('#postId').val()
                 const name = $(this).find('#m_name').val()
                 const mess = $(this).find('#m_text').val()
                 const data = JSON.stringify({
-                    post: postId,
-                    author_name: name,
-                    content: mess,
+                    wedding_code: "02609fd7",
+                    name: name,
+                    comment: mess,
                 });
-                ACTION_URL = '/wp-json/wp/v2/comments'
+                ACTION_URL = 'https://comment.mateotien.com';
                 fetch(ACTION_URL, {
                     method: 'post',
                     headers: {
