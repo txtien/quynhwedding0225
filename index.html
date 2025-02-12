@@ -538,6 +538,14 @@
                         }
                         $('#send_message_btn').prop('disabled', false);
                         $('#send_message_btn').html('Gửi lời chúc');
+                        // scroll to top of list_message  and scroll web page to top of list_message
+                        $('.list_message').animate({
+                            scrollTop: 0
+                        }, 1000);
+                        window.scrollTo({
+                            top: $('.list_message').offset().top - 100,
+                            behavior: 'smooth'
+                        });
                         return response.json();
                     })
                     .then((object) => {
