@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @font-face {
   font-display: swap;
   font-family: script-font;
@@ -129,7 +129,7 @@ html {
   max-width: 20vw;
 }
 .section-title {
-  font-size: 28px;
+  font-size: 18px;
   font-family: var(--title-font);
 }
 .group-button {
@@ -462,9 +462,9 @@ body {
 }
 .bg-bottom-left {
   position: absolute;
-    top: 40%;
-    left: -60px;
-    max-width: 140px;
+  top: 40%;
+  left: -60px;
+  max-width: 140px;
 }
 .leaf-1 {
   position: absolute;
@@ -479,7 +479,7 @@ body {
   right: 20%;
 }
 .banner-title {
-  font-size: 20px;
+  font-size: 30px;
   font-family: var(--title-font);
   margin-bottom: 40px;
 }
@@ -494,6 +494,7 @@ body {
   margin-top: 10px;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
 }
 .banner_date,
@@ -693,7 +694,7 @@ body {
   gap: 20px;
 }
 #countdown li {
-  min-width: 170px;
+  min-width: 120px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -704,7 +705,6 @@ body {
   border-radius: 8px;
   background-color: rgb(0 0 0 / 27%);
   color: #ffffff;
-  backdrop-filter: blur(28px);
 }
 #countdown li span {
   display: block;
@@ -801,7 +801,7 @@ body {
   position: absolute;
   top: 10%;
   left: 2%;
-  max-width: 40%;
+  max-width: 50%;
 }
 .thankyou-bg {
   position: absolute;
@@ -819,8 +819,8 @@ body {
 .thankyou-des {
   text-align: left;
   padding: 20px;
-  margin:  20px 0;
-  color: #FFF;
+  margin: 20px 0;
+  color: #fff;
   text-shadow: 2px 2px 8px #353535;
   font-family: "Montserrat", serif;
   font-size: 18px;
@@ -839,7 +839,7 @@ body {
   .bg-bottom-left,
   .bg-top-right {
     max-width: 40%;
-   left: -120px;
+    left: -120px;
   }
   .bg-top {
     max-width: 180px;
@@ -904,7 +904,7 @@ body {
     font-size: 86px;
   }
   .section-title {
-    font-size: 44px;
+    font-size: 32px;
   }
 }
 
@@ -914,11 +914,53 @@ body {
   }
   .thankyou-des {
     padding: 10px;
-    margin:  10px 0;
+    margin: 10px 0;
     font-size: 16px;
   }
   .leaf-1,
-  .leaf-2{
+  .leaf-2 {
     display: none;
   }
+}
+.content-save-the-date-2 {
+  display: none;
+}
+
+
+/* icon */
+.scroll-down{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.scroll-icon {
+  animation: scroll-down 1.5s infinite ease-in-out;
+}
+
+@keyframes scroll-down {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(15px);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.scroll-icon svg {
+  width: 30px;
+  height: 30px;
+  fill: none;
+  stroke: #a2525f;
+  stroke-width: 1;
+  stroke-linecap: round;
 }
