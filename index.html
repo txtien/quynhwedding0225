@@ -626,6 +626,41 @@
         <script data-minify="1" src="https://txtien.github.io/quynhwedding0225/assets/js/countdown.js" id="count-down js-js"></script>
         <script src="https://txtien.github.io/quynhwedding0225/assets/js/comment-reply.min.js" id="comment-reply-js" async data-wp-strategy="async"></script>
 
+        <!-- Add this script right before the closing </body> tag -->
+        <script>
+        // Media playback coordination
+        document.addEventListener("DOMContentLoaded", function() {
+            // Get all media elements
+            const allMedia = document.querySelectorAll('video, audio');
+            const audioToggleBtn = document.querySelector('.toggleAudio i');
+            
+            // Add event listeners to each media element
+            allMedia.forEach(media => {
+                media.addEventListener('play', function() {
+                    // When one media starts playing, pause all others
+                    allMedia.forEach(otherMedia => {
+                        if (otherMedia !== media && !otherMedia.paused) {
+                            otherMedia.pause();
+                        }
+                    });
+
+                    // If the played media is audio, update the icon
+                    if (media.tagName === 'AUDIO') {
+                        audioToggleBtn.classList.remove('ri-volume-mute-fill');
+                        audioToggleBtn.classList.add('ri-volume-up-fill');
+                    }
+                });
+
+                // For audio element, also handle pause event
+                if (media.tagName === 'AUDIO') {
+                    media.addEventListener('pause', function() {
+                        audioToggleBtn.classList.remove('ri-volume-up-fill');
+                        audioToggleBtn.classList.add('ri-volume-mute-fill');
+                    });
+                }
+            });
+        });
+        </script>
     </body>
 
 </html>
