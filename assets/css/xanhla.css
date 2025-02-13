@@ -2,17 +2,17 @@
 @font-face {
   font-display: swap;
   font-family: script-font;
-  src: url(https://txtien.github.io/quynhwedding0225/assets/fonts/SVN-Signatie.otf);
+  src: url(https://devportal.thangloigroup.vn/assets/fonts/SVN-Signatie.otf);
 }
 @font-face {
   font-display: swap;
   font-family: title-font;
-  src: url(https://txtien.github.io/quynhwedding0225/assets/fonts/DFVN-Berfilem.otf);
+  src: url(https://devportal.thangloigroup.vn/assets/fonts/DFVN-Berfilem.otf);
 }
 @font-face {
   font-display: swap;
   font-family: main-font;
-  src: url(https://txtien.github.io/quynhwedding0225/assets/fonts/SVN-Gilroy-Medium.otf);
+  src: url(https://devportal.thangloigroup.vn/assets/fonts/SVN-Gilroy-Medium.otf);
 }
 :root {
   --max-width: 1024px;
