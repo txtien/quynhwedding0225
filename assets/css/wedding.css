@@ -509,6 +509,10 @@ footer {
   color: #fff;
 }
 
+body.loading {
+  overflow: hidden;
+}
+
 .back {
   position: fixed;
   padding: 0;
