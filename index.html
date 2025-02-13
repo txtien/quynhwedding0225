@@ -105,10 +105,20 @@
         });
     });
 
-    // Add scroll to top on page load/refresh
-    window.onbeforeunload = function () {
+    // Scroll to top on page load/refresh, except for phone calls
+    window.onbeforeunload = function(e) {
+        // Get the clicked element
+        const activeElement = document.activeElement;
+        
+        // Check if the clicked element is a phone link
+        if (activeElement && activeElement.tagName === 'A' && activeElement.href.startsWith('tel:')) {
+            // Don't scroll to top for phone calls
+            return undefined;
+        }
+        
+        // Scroll to top for other cases
         window.scrollTo(0, 0);
-    }
+    };
 
     // Alternative method for some browsers
     history.scrollRestoration = "manual";
