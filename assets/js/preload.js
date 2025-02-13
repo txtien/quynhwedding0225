@@ -1,3 +1,5 @@
-$('body').attr('style','overflow:hidden')
-$(window).on("load",function(){$('body').attr('style','overflow-y: scroll;')
-$('.loader').delay(800).fadeOut(400)})
+$(document).ready(function(){
+  setTimeout(() => {
+    $('.screen-loading').hide();
+  }, 2000);
+});
