@@ -70,7 +70,7 @@
   row-gap: 40px;
   color: var(--text-white);
 }
-.list_message:not(.message-item){
+.list_message:empty{
   display:none;
 }
 .list_message {
@@ -120,7 +120,7 @@
   gap: 8px;
   align-items: center;
 }
-.messeger-body {
+.message_body {
   color: #606060;
   font-size: 12px;
 }
