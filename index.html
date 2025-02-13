@@ -13,7 +13,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Trường Phúc &amp; Hồng Hạnh Wedding site!">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/x-icon" href="./assets/imgs/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="https://txtien.github.io/quynhwedding0225/assets/imgs/favicon.png">
     <style>
         img:is([sizes="auto" i], [sizes^="auto," i]) {
             contain-intrinsic-size: 3000px 1500px
@@ -35,7 +35,7 @@
             padding: 0 !important;
         }
     </style>
-    <link rel='stylesheet' id='wp-block-library-css' href='./assets/css/style.min.css' media='all' />
+    <link rel='stylesheet' id='wp-block-library-css' href='https://txtien.github.io/quynhwedding0225/assets/css/style.min.css' media='all' />
     <style id='classic-theme-styles-inline-css'>
         /*! This file is auto-generated */
         .wp-block-button__link {
@@ -54,34 +54,74 @@
             text-decoration: none
         }
     </style>
-    <link rel='stylesheet' id='global-styles-inline-css' href='./assets/css/global.css' media='all' />
-    <link rel='stylesheet' id='uikit-css' href='./assets/css/uikit.min.css' media='all' />
-    <link data-minify="1" rel='stylesheet' id='reset uikit-css' href='./assets/css/reset.css' media='all' />
-    <link data-minify="1" rel='stylesheet' id='remixicon-css' href='./assets/css/remixicon.css' media='all' />
-    <link data-minify="1" rel='stylesheet' id='boxicon-css' href='./assets/css/boxicons.min.css' media='all' />
-    <link data-minify="1" rel='stylesheet' id='fancybox-css' href='./assets/css/fancybox.css' media='all' />
-    <link data-minify="1" rel='stylesheet' id='swiper slide-css' href='./assets/css/swiper.css' media='all' />
-    <link data-minify="1" rel='stylesheet' id='animation-css' href='./assets/css/animation.css' media='all' />
-    <link data-minify="1" rel='stylesheet' id='aos style-css' href='./assets/css/aos.css' media='all' />
-    <link data-minify="1" rel='stylesheet' id='footer style-css' href='./assets/css/footer.css' media='all' />
-    <link data-minify="1" rel='stylesheet' id='wedding style-css' href='./assets/css/wedding.css' media='all' />
-    <script src="./assets/js/jquery.min.js" id="jquery-core-js"></script>
-    <script src="./assets/js/jquery-migrate.min.js" id="jquery-migrate-js"></script>
-    <script src="./assets/js/jquery1.min.js" id="Jquery-js"></script>
-    <link data-minify="1" rel="stylesheet" href="./assets/css/xanhla.css">
+    <link rel='stylesheet' id='global-styles-inline-css' href='https://txtien.github.io/quynhwedding0225/assets/css/global.css' media='all' />
+    <link rel='stylesheet' id='uikit-css' href='https://txtien.github.io/quynhwedding0225/assets/css/uikit.min.css' media='all' />
+    <link data-minify="1" rel='stylesheet' id='reset uikit-css' href='https://txtien.github.io/quynhwedding0225/assets/css/reset.css' media='all' />
+    <link data-minify="1" rel='stylesheet' id='remixicon-css' href='https://txtien.github.io/quynhwedding0225/assets/css/remixicon.css' media='all' />
+    <link data-minify="1" rel='stylesheet' id='boxicon-css' href='https://txtien.github.io/quynhwedding0225/assets/css/boxicons.min.css' media='all' />
+    <link data-minify="1" rel='stylesheet' id='fancybox-css' href='https://txtien.github.io/quynhwedding0225/assets/css/fancybox.css' media='all' />
+    <link data-minify="1" rel='stylesheet' id='swiper slide-css' href='https://txtien.github.io/quynhwedding0225/assets/css/swiper.css' media='all' />
+    <link data-minify="1" rel='stylesheet' id='animation-css' href='https://txtien.github.io/quynhwedding0225/assets/css/animation.css' media='all' />
+    <link data-minify="1" rel='stylesheet' id='aos style-css' href='https://txtien.github.io/quynhwedding0225/assets/css/aos.css' media='all' />
+    <link data-minify="1" rel='stylesheet' id='footer style-css' href='https://txtien.github.io/quynhwedding0225/assets/css/footer.css' media='all' />
+    <link data-minify="1" rel='stylesheet' id='wedding style-css' href='https://txtien.github.io/quynhwedding0225/assets/css/wedding.css' media='all' />
+    <script src="https://txtien.github.io/quynhwedding0225/assets/js/jquery.min.js" id="jquery-core-js"></script>
+    <script src="https://txtien.github.io/quynhwedding0225/assets/js/jquery-migrate.min.js" id="jquery-migrate-js"></script>
+    <script src="https://txtien.github.io/quynhwedding0225/assets/js/jquery1.min.js" id="Jquery-js"></script>
+    <link data-minify="1" rel="stylesheet" href="https://txtien.github.io/quynhwedding0225/assets/css/xanhla.css">
+    <script>
+    // Add this lazy loading script
+    document.addEventListener("DOMContentLoaded", function() {
+        // Lazy load images
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    observer.unobserve(img);
+                }
+            });
+        });
+
+        // Lazy load videos
+        const videoObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const video = entry.target;
+                    video.src = video.dataset.src;
+                    observer.unobserve(video);
+                }
+            });
+        });
+
+        // Get all images with data-src attribute
+        document.querySelectorAll('img[data-src]').forEach(img => {
+            imageObserver.observe(img);
+        });
+
+        // Get all videos with data-src attribute
+        document.querySelectorAll('video[data-src]').forEach(video => {
+            videoObserver.observe(video);
+        });
+    });
+
+    // Add scroll to top on page load/refresh
+    window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+    }
+
+    // Alternative method for some browsers
+    history.scrollRestoration = "manual";
+    </script>
 </head>
 
 <body
-    class="mau-thiep-template mau-thiep-template-templates mau-thiep-template-xanhla mau-thiep-template-templatesxanhla-php single single-mau-thiep postid-199">
+    class="loading mau-thiep-template mau-thiep-template-templates mau-thiep-template-xanhla mau-thiep-template-templatesxanhla-php single single-mau-thiep postid-199">
 
     <body>
-        <!-- PRELOAD -->
-        <div class="loader">
-            <div class="loader-logo">
-                <img src="" alt="">
-            </div>
-            <span class="tracking-in-expand"></span>
-        </div>
+        <div class="back screen-loading"></div>
+        <div class="heart screen-loading"></div>
+
         <!-- END PRELOAD --> <!-- BANNER -->
         <section id="banner" class="section-banner">
             <img width="320" height="394"
@@ -121,17 +161,15 @@
                             <span class="banner_year">2025</span>
                         </div>
                     </div>
-                    <div class="scroll-down">
-                        <a href="#time-line">
-                            Cùng xem lại hành trình của bọn mình nhé !
-                        </a>
-                        <div class="scroll-icon">
+                    <a class="scroll-down" href="#time-line">
+                        Cùng xem lại hành trình của bọn mình nhé !
+                        <span class="scroll-icon">
                             <svg viewBox="0 0 24 24">
                                 <polyline points="6 7 12 13 18 7" />
                                 <polyline points="6 13 12 19 18 13" />
                             </svg>
-                        </div>
-                    </div>
+                        </span>
+                    </a>
                 </div>
             </div>
         </section>
@@ -139,7 +177,7 @@
       
         <!-- TIMELINE -->
         <section id="time-line" class="time-line-section img_bg bg_overlay"
-            style="background-image:url(./assets/imgs/cauhon_bg.jpg)">
+            style="background-image:url(https://txtien.github.io/quynhwedding0225/assets/imgs/cauhon_bg.jpg)">
             <div class="time-line container">
                 <div class="section-heading">
                     <h2 class="section-title">
@@ -169,7 +207,7 @@
                             <source src="./assets/media/mp41.mp4" type="video/mp4">
                             <source src="./assets/video/6301199030985.mp4" type="video/ogg">
                             Your browser does not support the video tag.
-                          </video>
+                        </video>
                     </div>
                 </div>
             </div>
@@ -185,74 +223,56 @@
             <div class="album container">
                 <div class="album-item">
                     <a data-fancybox="gallery"
-                        href="./assets/imgs/album/album1.jpg">
-                        <img width="1267" height="1900"
-                            src="./assets/imgs/album/album1.jpg"
-                            alt="">
+                        href="https://txtien.github.io/quynhwedding0225/assets/imgs/album/album1.jpg">
+                        <img width="1267" height="1900" data-src="https://txtien.github.io/quynhwedding0225/assets/imgs/album/album1.jpg" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
                     </a>
                 </div>
                 <div class="album-item">
                     <a data-fancybox="gallery"
-                    href="./assets/imgs/album/album2.jpg">
-                    <img width="1267" height="1900"
-                        src="./assets/imgs/album/album2.jpg"
-                        alt="">
+                    href="https://txtien.github.io/quynhwedding0225/assets/imgs/album/album2.jpg">
+                    <img width="1267" height="1900" data-src="https://txtien.github.io/quynhwedding0225/assets/imgs/album/album2.jpg" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
                 </a>
                 </div>
                 <div class="album-item">
                     <a data-fancybox="gallery"
-                        href="./assets/imgs/album/album3.jpg">
-                        <img width="1267" height="1900"
-                            src="./assets/imgs/album/album3.jpg"
-                            alt="">
+                        href="https://txtien.github.io/quynhwedding0225/assets/imgs/album/album3.jpg">
+                        <img width="1267" height="1900" data-src="https://txtien.github.io/quynhwedding0225/assets/imgs/album/album3.jpg" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
                     </a>
                 </div>
                 <div class="album-item">
                     <a data-fancybox="gallery"
-                        href="./assets/imgs/album/album4.jpg">
-                        <img width="1267" height="1900"
-                            src="./assets/imgs/album/album4.jpg"
-                            alt="">
+                        href="https://txtien.github.io/quynhwedding0225/assets/imgs/album/album4.jpg">
+                        <img width="1267" height="1900" data-src="https://txtien.github.io/quynhwedding0225/assets/imgs/album/album4.jpg" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
                     </a>
                 </div>
                 <div class="album-item">
                     <a data-fancybox="gallery"
-                        href="./assets/imgs/album/album5.jpg">
-                        <img width="1267" height="1900"
-                            src="./assets/imgs/album/album5.jpg"
-                            alt="">
+                        href="https://txtien.github.io/quynhwedding0225/assets/imgs/album/album5.jpg">
+                        <img width="1267" height="1900" data-src="https://txtien.github.io/quynhwedding0225/assets/imgs/album/album5.jpg" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
                     </a>
                 </div>
                 <div class="album-item">
                     <a data-fancybox="gallery"
-                        href="./assets/imgs/album/album6.jpg">
-                        <img width="1267" height="1900"
-                            src="./assets/imgs/album/album6.jpg"
-                            alt="">
+                        href="https://txtien.github.io/quynhwedding0225/assets/imgs/album/album6.jpg">
+                        <img width="1267" height="1900" data-src="https://txtien.github.io/quynhwedding0225/assets/imgs/album/album6.jpg" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
                     </a>
                 </div>
                 <div class="album-item">
                     <a data-fancybox="gallery"
-                        href="./assets/imgs/album/album7.jpg">
-                        <img width="1267" height="1900"
-                            src="./assets/imgs/album/album7.jpg"
-                            alt="">
+                        href="https://txtien.github.io/quynhwedding0225/assets/imgs/album/album7.jpg">
+                        <img width="1267" height="1900" data-src="https://txtien.github.io/quynhwedding0225/assets/imgs/album/album7.jpg" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
                     </a>
                 </div>
                 <div class="album-item">
                     <a data-fancybox="gallery"
-                        href="./assets/imgs/album/album8.jpg">
-                        <img width="1267" height="1900"
-                            src="./assets/imgs/album/album8.jpg"
-                            alt="">
+                        href="https://txtien.github.io/quynhwedding0225/assets/imgs/album/album8.jpg">
+                        <img width="1267" height="1900" data-src="https://txtien.github.io/quynhwedding0225/assets/imgs/album/album8.jpg" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
                     </a>
                 </div>
                 <div class="album-item">
                     <a data-fancybox="gallery"
-                        href="./assets/imgs/album/album9.jpg">
-                        <img width="1267" height="1900"
-                            src="./assets/imgs/album/album9.jpg"
-                            alt="">
+                        href="https://txtien.github.io/quynhwedding0225/assets/imgs/album/album9.jpg">
+                        <img width="1267" height="1900" data-src="https://txtien.github.io/quynhwedding0225/assets/imgs/album/album9.jpg" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
                     </a>
                 </div>
             </div>
@@ -299,7 +319,7 @@
         <!-- COUNT DOWN -->
 
         <section id="countdown-secton" class="section-countdown img_bg bg_overlay"
-            style="background-image:url(./assets/imgs/3.jpg)">
+            style="background-image:url(https://txtien.github.io/quynhwedding0225/assets/imgs/3.jpg)">
             <div class="countdown container">
                 <p class="subtitle">CÙNG ĐẾM NGƯỢC THỜI GIAN</p>
                 <h2 class="section-title">
@@ -342,7 +362,7 @@
                 <div class="invitation">
                     <div class="invitation-container">
                         <div class="invitation-card"> <img width="1266" height="1900"
-                            src="./assets/imgs/honle.jpg" alt="Công viên Tân Thành" />
+                            src="https://txtien.github.io/quynhwedding0225/assets/imgs/honle.jpg" alt="Công viên Tân Thành" />
                             <h3 class="card-title">Công viên Tân Thành</h3>
                             <address>
                                 <p>Tân Thành, Bắc Tân Uyên, Bình Dương</p>
@@ -382,7 +402,7 @@
                         </div>
                         <div class="invitation-card"> 
                             <img width="1266" height="1900"
-                            src="./assets/imgs/honle2.jpg" alt="Trường Tiểu Học Tân Định" />
+                            src="https://txtien.github.io/quynhwedding0225/assets/imgs/honle2.jpg" alt="Trường Tiểu Học Tân Định" />
                                 
                             <h3 class="card-title">Trường Tiểu Học Tân Định</h3>
                             <address>
@@ -430,7 +450,7 @@
         <!-- LỜI CHÚC -->
         <!-- TIN NHẮN -->
         <section id="message" class="section-message img_bg bg_overlay"
-            style="background-image:url(./assets/imgs/loichuc.jpg); display:block">
+            style="background-image:url(https://txtien.github.io/quynhwedding0225/assets/imgs/loichuc.jpg); display:block">
             <div class="message-container container">
                 <h2 class="section-title">
                     Lời chúc từ những người thân iu của bọn tớ
@@ -443,7 +463,6 @@
                 <div class="form-message">
                     <h3 class="form-title"> </h3>
                     <form action="" id="messageForm" method="POST">
-                        <input type='hidden' id="postId" value='199' />
                         <div class="input-group">
                             <label for="">
                                 Cho mình xin tên nha </label>
@@ -454,7 +473,7 @@
                                 Lời nhắn gửi </label>
                             <textarea id="m_text" class="input-text" name="" cols="30" rows="5" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary send_message">Gửi lời chúc</button>
+                        <button id="send_message_btn" type="submit" class="btn btn-primary send_message">Gửi lời chúc</button>
                     </form>
                 </div>
                
@@ -462,59 +481,61 @@
         </section>
         <!-- END TIN NHẮN -->
         <script>
-            const COMMENT_FAKE_DATA = [
-                {
-                    "id": 93,
-                    "author_name": "Ngọc Quỳnh",
-                    "date": "2024-11-07T10:38:37",
-                    "content": "<p>Chúc mừng Hạnh & Phúc</p>",
-                }
-            ]
-            let mess_item = ''
-            if (COMMENT_FAKE_DATA.length === 0) {
-                $('.list_message').attr('class', 'hidden')
-            } else {
-                for (let comment of COMMENT_FAKE_DATA) {
-                    c_author = comment.author_name
-                    c_content = comment.content
-                    mess_item += '<div class="message-item"> <h3 class="user_message">' + c_author + '</h3> <p class="message_body">' + c_content + '</p> </div>'
-                }
-                $('.list_message').html(mess_item)
-            }
-            // fetch('/wp-json/wp/v2/comments?post=1676&per_page=100',
+            // const COMMENT_FAKE_DATA = [
             //     {
-            //         method: 'GET',
+            //         "id": 93,
+            //         "author_name": "Ngọc Quỳnh",
+            //         "date": "2024-11-07T10:38:37",
+            //         "content": "<p>Chúc mừng Hạnh & Phúc</p>",
             //     }
-            // )
+            // ]
+            // let mess_item = ''
+            // if (COMMENT_FAKE_DATA.length === 0) {
+            //     $('.list_message').attr('class', 'hidden')
+            // } else {
+            //     for (let comment of COMMENT_FAKE_DATA) {
+            //         c_author = comment.author_name
+            //         c_content = comment.content
+            //         mess_item += '<div class="message-item"> <h3 class="user_message">' + c_author + '</h3> <p class="message_body">' + c_content + '</p> </div>'
+            //     }
+            //     $('.list_message').html(mess_item)
+            // }
+            fetch('https://comment.mateotien.com/api/comment/?wedding_code=02609fd7',
+                {
+                    method: 'GET',
+                }
+            )
 
-            //     .then(response => response.json())
-            //     .then(data => {
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    mess_item = ''
+                    for (let i in data) {
+                        if (!i) {
+                            $('.list_message').attr('class', 'hidden')
+                        }
+                        c_author = data[i].name
+                        c_content = data[i].comment
 
-            //         mess_item = ''
-            //         for (let i in data) {
-            //             if (!i) {
-            //                 $('.list_message').attr('class', 'hidden')
-            //             }
-            //             c_author = data[i].author_name
-            //             c_content = data[i].content.rendered
-
-            //             mess_item += '<div class="message-item"> <h3 class="user_message">' + c_author + '</h3> <p class="message_body">' + c_content + '</p> </div>'
-            //         }
-            //         $('.list_message').html(mess_item)
-            //     })
+                        mess_item += '<div class="message-item"> <h3 class="user_message">' + c_author + '</h3> <p class="message_body">' + c_content + '</p> </div>'
+                    }
+                    $('.list_message').html(mess_item)
+                })
 
             //FORM
             $('#messageForm').submit(function (e) {
                 e.preventDefault();
-                const postId = $(this).find('#postId').val()
+                $('#send_message_btn').prop('disabled', true);
+                $('#send_message_btn').html('Đang gửi...');
+
                 const name = $(this).find('#m_name').val()
                 const mess = $(this).find('#m_text').val()
                 const data = JSON.stringify({
-                    post: postId,
-                    author_name: name,
-                    content: mess,
+                    wedding_code: "02609fd7",
+                    name: name,
+                    comment: mess,
                 });
-                ACTION_URL = '/wp-json/wp/v2/comments'
+                ACTION_URL = 'https://comment.mateotien.com/api/comment/';
                 fetch(ACTION_URL, {
                     method: 'post',
                     headers: {
@@ -528,6 +549,16 @@
                             $('.list_message').prepend(mess_new)
                             $('#messageForm')[0].reset()
                         }
+                        $('#send_message_btn').prop('disabled', false);
+                        $('#send_message_btn').html('Gửi lời chúc');
+                        // scroll to top of list_message  and scroll web page to top of list_message
+                        $('.list_message').animate({
+                            scrollTop: 0
+                        }, 1000);
+                        window.scrollTo({
+                            top: $('.list_message').offset().top - 100,
+                            behavior: 'smooth'
+                        });
                         return response.json();
                     })
                     .then((object) => {
@@ -545,12 +576,12 @@
         <!-- THANK YOU -->
         <section id="thankyou" class="section-thankyou bg_overlay uk-position-z-index">
             <img width="1233" height="1900"
-                src="./assets/imgs/1.jpg"
+                src="https://txtien.github.io/quynhwedding0225/assets/imgs/1.jpg"
                 alt="" class="thankyou-bg thankyou_img" />
             <div class="thankyou-body container uk-light">
                 <h2 class="thankyou-title" data-aos="fade-up" data-aos-duration="2000">Thank you!</h2>
                 <p class="thankyou-des" data-aos="fade" data-aos-duration="3000">Sự hiện diện của bạn sẽ khiến hôn lễ
-                    của chúng mình trở nên ý nghĩa hơn bao giờ hết!</p>
+                    của chúng tôi trở nên ý nghĩa hơn bao giờ hết!</p>
         </section>
         <!-- END THANK YOU --><!-- END THANKYOU -->
         <script>
@@ -581,19 +612,19 @@
         </script>
         <script id="rocket-preload-links-js-after">
             (function () {
-                "use strict"; var r = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) { return typeof e } : function (e) { return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e }, e = function () { function i(e, t) { for (var n = 0; n < t.length; n++) { var i = t[n]; i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(e, i.key, i) } } return function (e, t, n) { return t && i(e.prototype, t), n && i(e, n), e } }(); function i(e, t) { if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function") } var t = function () { function n(e, t) { i(this, n), this.browser = e, this.config = t, this.options = this.browser.options, this.prefetched = new Set, this.eventTime = null, this.threshold = 1111, this.numOnHover = 0 } return e(n, [{ key: "init", value: function () { !this.browser.supportsLinkPrefetch() || this.browser.isDataSaverModeOn() || this.browser.isSlowConnection() || (this.regex = { excludeUris: RegExp(this.config.excludeUris, "i"), images: RegExp(".(" + this.config.imageExt + ")$", "i"), fileExt: RegExp(".(" + this.config.fileExt + ")$", "i") }, this._initListeners(this)) } }, { key: "_initListeners", value: function (e) { -1 < this.config.onHoverDelay && document.addEventListener("mouseover", e.listener.bind(e), e.listenerOptions), document.addEventListener("mousedown", e.listener.bind(e), e.listenerOptions), document.addEventListener("touchstart", e.listener.bind(e), e.listenerOptions) } }, { key: "listener", value: function (e) { var t = e.target.closest("a"), n = this._prepareUrl(t); if (null !== n) switch (e.type) { case "mousedown": case "touchstart": this._addPrefetchLink(n); break; case "mouseover": this._earlyPrefetch(t, n, "mouseout") } } }, { key: "_earlyPrefetch", value: function (t, e, n) { var i = this, r = setTimeout(function () { if (r = null, 0 === i.numOnHover) setTimeout(function () { return i.numOnHover = 0 }, 1e3); else if (i.numOnHover > i.config.rateThrottle) return; i.numOnHover++, i._addPrefetchLink(e) }, this.config.onHoverDelay); t.addEventListener(n, function e() { t.removeEventListener(n, e, { passive: !0 }), null !== r && (clearTimeout(r), r = null) }, { passive: !0 }) } }, { key: "_addPrefetchLink", value: function (i) { return this.prefetched.add(i.href), new Promise(function (e, t) { var n = document.createElement("link"); n.rel = "prefetch", n.href = i.href, n.onload = e, n.onerror = t, document.head.appendChild(n) }).catch(function () { }) } }, { key: "_prepareUrl", value: function (e) { if (null === e || "object" !== (void 0 === e ? "undefined" : r(e)) || !1 in e || -1 === ["http:", "https:"].indexOf(e.protocol)) return null; var t = e.href.substring(0, this.config.siteUrl.length), n = this._getPathname(e.href, t), i = { original: e.href, protocol: e.protocol, origin: t, pathname: n, href: t + n }; return this._isLinkOk(i) ? i : null } }, { key: "_getPathname", value: function (e, t) { var n = t ? e.substring(this.config.siteUrl.length) : e; return n.startsWith("/") || (n = "/" + n), this._shouldAddTrailingSlash(n) ? n + "/" : n } }, { key: "_shouldAddTrailingSlash", value: function (e) { return this.config.usesTrailingSlash && !e.endsWith("/") && !this.regex.fileExt.test(e) } }, { key: "_isLinkOk", value: function (e) { return null !== e && "object" === (void 0 === e ? "undefined" : r(e)) && (!this.prefetched.has(e.href) && e.origin === this.config.siteUrl && -1 === e.href.indexOf("?") && -1 === e.href.indexOf("#") && !this.regex.excludeUris.test(e.href) && !this.regex.images.test(e.href)) } }], [{ key: "run", value: function () { "undefined" != typeof RocketPreloadLinksConfig && new n(new RocketBrowserCompatibilityChecker({ capture: !0, passive: !0 }), RocketPreloadLinksConfig).init() } }]), n }(); t.run();
-            }());
+                "use strict"; var r = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) { return typeof e } : function (e) { return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e }, e = function () { function i(e, t) { for (var n = 0; n < t.length; n++) { var i = t[n]; i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(e, i.key, i) } } return function (e, t, n) { return t && i(e.prototype, t), n && i(e, n), e } }(); function i(e, t) { if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function") } var t = function () { function n(e, t) { i(this, n), this.browser = e, this.config = t, this.options = this.browser.options, this.prefetched = new Set, this.eventTime = null, this.threshold = 1111, this.numOnHover = 0 } return e(n, [{ key: "init", value: function () { !this.browser.supportsLinkPrefetch() || this.browser.isDataSaverModeOn() || this.browser.isSlowConnection() || (this.regex = { excludeUris: RegExp(this.config.excludeUris, "i"), images: RegExp(".(" + this.config.imageExt + ")$", "i"), fileExt: RegExp(".(" + this.config.fileExt + ")$", "i") }, this._initListeners(this)) } }, { key: "_initListeners", value: function (e) { -1 < this.config.onHoverDelay && document.addEventListener("mouseover", e.listener.bind(e), e.listenerOptions), document.addEventListener("mousedown", e.listener.bind(e), e.listenerOptions), document.addEventListener("touchstart", e.listener.bind(e), e.listenerOptions) } }, { key: "listener", value: function (e) { var t = e.target.closest("a"), n = this._prepareUrl(t); if (null !== n) switch (e.type) { case "mousedown": case "touchstart": this._addPrefetchLink(n); break; case "mouseover": this._earlyPrefetch(t, n, "mouseout") } } }, { key: "_earlyPrefetch", value: function (t, e, n) { var i = this, r = setTimeout(function () { if (r = null, 0 === i.numOnHover) setTimeout(function () { return i.numOnHover = 0 }, 1e3); else if (i.numOnHover > i.config.rateThrottle) return; i.numOnHover++, i._addPrefetchLink(e) }, this.config.onHoverDelay); t.addEventListener(n, function e() { t.removeEventListener(n, e, { passive: !0 }), null !== r && (clearTimeout(r), r = null) }, { passive: !0 }) } }, { key: "_addPrefetchLink", value: function (i) { return this.prefetched.add(i.href), new Promise(function (e, t) { var n = document.createElement("link"); n.rel = "prefetch", n.href = i.href, n.onload = e, n.onerror = t, document.head.appendChild(n) }).catch(function () { }) } }, { key: "_prepareUrl", value: function (e) { if (null === e || "object" !== (void 0 === e ? "undefined" : r(e))) return null; var t = e.href.substring(0, this.config.siteUrl.length), n = this._getPathname(e.href, t), i = { original: e.href, protocol: e.protocol, origin: t, pathname: n, href: t + n }; return this._isLinkOk(i) ? i : null } }, { key: "_getPathname", value: function (e, t) { var n = t ? e.substring(this.config.siteUrl.length) : e; return n.startsWith("/") || (n = "/" + n), this._shouldAddTrailingSlash(n) ? n + "/" : n } }, { key: "_shouldAddTrailingSlash", value: function (e) { return this.config.usesTrailingSlash && !e.endsWith("/") && !this.regex.fileExt.test(e) } }, { key: "_isLinkOk", value: function (e) { return null !== e && "object" === (void 0 === e ? "undefined" : r(e)) && (!this.prefetched.has(e.href) && e.origin === this.config.siteUrl && -1 === e.href.indexOf("?") && -1 === e.href.indexOf("#") && !this.regex.excludeUris.test(e.href) && !this.regex.images.test(e.href)) } }], [{ key: "run", value: function () { "undefined" != typeof RocketPreloadLinksConfig && new n(new RocketBrowserCompatibilityChecker({ capture: !0, passive: !0 }), RocketPreloadLinksConfig).init() } }]), n }(); t.run();
+            })();
         </script>
-        <script src="./assets/js/uikit.min.js" id="uikit js-js"></script>
-        <script src="./assets/js/uikit-icons.min.js" id="uikit icon-js"></script>
-        <script data-minify="1" src="./assets/js/preload.js" id="preload js-js"></script>
-        <script data-minify="1" src="./assets/js/aos.js" id="aos js-js"></script>
-        <script data-minify="1" src="./assets/js/fancybox.umd.js" id="fancybox js-js"></script>
-        <script data-minify="1" src="./assets/js/swiper.min.js" id="swiper slide-js"></script>
-        <script data-minify="1" src="./assets/js/scrollreveal.min.js" id="scrollrevea-js"></script>
-        <script data-minify="1" src="./assets/js/main-wedding.js" id="main wedding-js"></script>
-        <script data-minify="1" src="./assets/js/countdown.js" id="count-down js-js"></script>
-        <script src="./assets/js/comment-reply.min.js" id="comment-reply-js" async data-wp-strategy="async"></script>
+        <script src="https://txtien.github.io/quynhwedding0225/assets/js/uikit.min.js" id="uikit js-js"></script>
+        <script src="https://txtien.github.io/quynhwedding0225/assets/js/uikit-icons.min.js" id="uikit icon-js"></script>
+        <script data-minify="1" src="https://txtien.github.io/quynhwedding0225/assets/js/preload.js" id="preload js-js"></script>
+        <script data-minify="1" src="https://txtien.github.io/quynhwedding0225/assets/js/aos.js" id="aos js-js"></script>
+        <script data-minify="1" src="https://txtien.github.io/quynhwedding0225/assets/js/fancybox.umd.js" id="fancybox js-js"></script>
+        <script data-minify="1" src="https://txtien.github.io/quynhwedding0225/assets/js/swiper.min.js" id="swiper slide-js"></script>
+        <script data-minify="1" src="https://txtien.github.io/quynhwedding0225/assets/js/scrollreveal.min.js" id="scrollrevea-js"></script>
+        <script data-minify="1" src="https://txtien.github.io/quynhwedding0225/assets/js/main-wedding.js" id="main wedding-js"></script>
+        <script data-minify="1" src="https://txtien.github.io/quynhwedding0225/assets/js/countdown.js" id="count-down js-js"></script>
+        <script src="https://txtien.github.io/quynhwedding0225/assets/js/comment-reply.min.js" id="comment-reply-js" async data-wp-strategy="async"></script>
 
     </body>
 
