@@ -2,17 +2,17 @@
 @font-face {
   font-display: swap;
   font-family: script-font;
-  src: url(https://txtien.github.io/quynhwedding0225/assets/fonts/SVN-Signatie.otf);
+  src: url(https://devportal.thangloigroup.vn/assets/fonts/SVN-Signatie.otf);
 }
 @font-face {
   font-display: swap;
   font-family: title-font;
-  src: url(https://txtien.github.io/quynhwedding0225/assets/fonts/DFVN-Berfilem.otf);
+  src: url(https://devportal.thangloigroup.vn/assets/fonts/DFVN-Berfilem.otf);
 }
 @font-face {
   font-display: swap;
   font-family: main-font;
-  src: url(https://txtien.github.io/quynhwedding0225/assets/fonts/SVN-Gilroy-Medium.otf);
+  src: url(https://devportal.thangloigroup.vn/assets/fonts/SVN-Gilroy-Medium.otf);
 }
 :root {
   --max-width: 1024px;
@@ -129,7 +129,7 @@ html {
   max-width: 20vw;
 }
 .section-title {
-  font-size: 18px;
+  font-size: 20px;
   font-family: var(--title-font);
 }
 .group-button {
@@ -567,14 +567,13 @@ body {
   position: relative;
   display: grid;
   justify-content: center;
-  padding: 80px 0;
   margin-top: 0px;
   color: var(--text-white);
   z-index: 9;
 }
 .timeline-list {
+  margin-bottom: 40px;
   position: relative;
-  margin-top: 80px;
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -599,6 +598,12 @@ body {
 }
 .timeline-media {
   position: relative;
+}
+.timeline-list video{
+ border-radius: 12px;
+}
+.timeline-list:last-child video{
+  aspect-ratio: 1;
 }
 .timeline-media img {
   max-width: 200px;
@@ -674,11 +679,11 @@ body {
 }
 .countdown {
   display: flex;
-  row-gap: 40px;
+  row-gap: 70px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 50vh;
+  height: 60vh;
 }
 #countdown {
   display: flex;
@@ -722,14 +727,34 @@ body {
   padding: 0 0.5rem;
 }
 #invitation {
-  padding: 80px 0;
+  padding-bottom: 80px;
+  padding-top: 20px;
+}
+#invitation .social-link {
+  margin-top: 0;
+}
+#invitation .social-link a i{
+  color: var(--main-color);
+  font-size: 24px;
+  padding: 8px;
+}
+#invitation .section-heading {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.invitation{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .invitation-container {
   margin-top: 40px;
-  display: grid;
-  gap: 40px;
-  grid-template-columns: repeat(auto-fit, 320px);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 320px;
   justify-content: center;
+  align-items: center;
 }
 .invitation-card {
   display: flex;
@@ -737,16 +762,18 @@ body {
   align-items: center;
   padding: 20px;
   gap: 12px;
-  background-color: var(--bg);
+  background-color: #a2525f30;
+  color: var(--main-color);
   border-radius: 12px;
   max-width: 100%;
+  width: 100%;
   text-align: center;
 }
 .invitation-card img {
   max-width: 120px;
   aspect-ratio: 1/1;
   object-fit: cover;
-  padding: 8px;
+  padding: 4px;
   background-color: var(--text-white);
   border-radius: 50%;
 }
@@ -759,8 +786,7 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 8px;
-  margin-bottom: 12px;
+  gap: 12px;
 }
 .invi_group_time {
   display: grid;
@@ -777,14 +803,15 @@ body {
 }
 .invi_date_text,
 .invi_year_text {
-  border-top: 1px solid var(--primary-color);
-  border-bottom: 1px solid var(--primary-color);
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
   padding: 4px 0;
 }
 .invi_amlich {
   font-style: italic;
   font-size: 14px;
 }
+
 .section-thankyou {
   position: relative;
   display: flex;
@@ -829,9 +856,6 @@ body {
   .main-about {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 40px;
-  }
-  .invitation {
-    grid-template-columns: repeat(2, 1fr);
   }
   .right-fixed i {
     font-size: 24px;
