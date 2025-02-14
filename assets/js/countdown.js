@@ -10,7 +10,7 @@
   // Target date configuration
   const TARGET_DATE = {
     MONTH: "02",
-    DATE: "21",
+    DATE: "22",
   };
 
   // Get current date
@@ -31,7 +31,7 @@
 
     // If today is past this year's target date, set for next year
     if (new Date(currentDate) > new Date(targetDate)) {
-      return `${TARGET_DATE.MONTH}/${TARGET_DATE.DATE}/${current.year + 1}`;
+      return `${TARGET_DATE.MONTH}/${TARGET_DATE.DATE}/${current.year}`;
     }
     return targetDate;
   };
@@ -54,16 +54,16 @@
   const handleCountdownComplete = () => {
     document.getElementById("countdown").style.display = "none";
     document.getElementById("content").style.display = "block";
+    document.querySelector(".countdown .subtitle").style.display = "none";
   };
 
   // Initialize countdown
   const initCountdown = () => {
-    const targetDate = new Date(getTargetBirthday()).getTime();
-
+    
+    const targetDate = new Date(getTargetBirthday());
     const timer = setInterval(() => {
-      const now = new Date().getTime();
+      const now = new Date();
       const distance = targetDate - now;
-
       if (distance < 0) {
         clearInterval(timer);
         handleCountdownComplete();
