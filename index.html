@@ -708,6 +708,31 @@
             document.addEventListener("DOMContentLoaded", function () {
                 const audio = document.getElementById('audio');
                 const audioToggleBtn = document.querySelector('.toggleAudio i');
+                let hasInteracted = false;
+
+                // Function to start audio
+                function startAudio() {
+                    if (!hasInteracted) {
+                        audio.play()
+                            .then(() => {
+                                audioToggleBtn.classList.remove('ri-volume-mute-fill');
+                                audioToggleBtn.classList.add('ri-volume-up-fill');
+                                hasInteracted = true;
+                            })
+                            .catch(error => {
+                                console.log("Audio play failed:", error);
+                            });
+                    }
+                }
+
+                // Listen for any user interaction
+                const interactionEvents = ['click', 'touchstart', 'keydown', 'scroll'];
+
+                interactionEvents.forEach(event => {
+                    document.addEventListener(event, () => {
+                        startAudio();
+                    }, { once: true }); // once: true means the event listener will be removed after first trigger
+                });
 
                 // Toggle button functionality
                 document.querySelector('.toggleAudio').addEventListener('click', function () {
