@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TARGET_DIR="/var/www/wedding0225"
+TARGET_DIR="/var/www/wedding"
 SCRIPT_NAME="script.sh"
 
 # Check if running as root
